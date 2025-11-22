@@ -82,5 +82,33 @@ button:hover {
 .negativo { color: #ff0000;}
 .nulo { color: yellow;}
 
+   <script>
+   const campoNumero = document.getElementById ('meuNumero');
+const botao = document.getElementById ('botaoVerificar');
+const paragrafoResultado = document.getElementById ('resultadoFinal');
+
+botao.addEventListener ('click', function() {
+
+ const numeroDigitado = campoNumero.value;
+
+ const numero = parseInt(numeroDigitado);
+
+ let mensagem = ""
+
+ if (isNaN(numero)) {
+  mensagem = 'Por favor, digite um número válido!';
+ } else if (numero > 0) {
+  mensagem = 'Positivo';
+ } else if (numero < 0){
+  mensagem = 'Negativo';
+ } else {
+  mensagem = 'Nulo';
+ }
+
+
+paragrafoResultado.textContent = mensagem;
+})
+</script>
+
    
 </style>
